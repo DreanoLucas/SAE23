@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Convertisseur de base</title>
+  <style>
+    input {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <input type="text" id="message" placeholder="Entrez un message">
+    <label for="base-depart">Base de départ :</label>
+    <select id="base-depart">
+      <option value="2">Binaire</option>
+      <option value="8">Octal</option>
+      <option value="10" selected>Decimale</option>
+      <option value="16">Hexadecimale</option>
+    </select>
+    <label for="base-arrivee">Base d'arrivée :</label>
+    <select id="base-arrivee">
+      <option value="2">Binaire</option>
+      <option value="8">Octal</option>
+      <option value="10" selected>Decimale</option>
+      <option value="16">Hexadecimale</option>
+    </select>
+    <input type="submit" value="Convertir">
+  </form>
+  <div id="resultat"></div>
+  <script>
+    const form = document.querySelector('form');
+    const resultat = document.getElementById('resultat');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const message = document.getElementById('message').value;
+      const baseDepart = parseInt(document.getElementById('base-depart').value, 10);
+      const baseArrivee = parseInt(document.getElementById('base-arrivee').value, 10);
+
+      const nombreDecimal = parseInt(message, baseDepart);
+      const messageConverti = nombreDecimal.toString(baseArrivee);
+
+      resultat.textContent = messageConverti;
+    });
+  </script>
+</body>
+</html>

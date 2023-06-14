@@ -1,0 +1,328 @@
+html, body{
+    margin:0;
+    padding: 0;
+    
+}
+.top-nav {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+    .top-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .top-nav li {
+    float: left;
+  }
+  
+  .top-nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .top-nav li a:hover {
+    background-color: #111;
+  }
+
+
+  
+  /* Définir des styles pour les boutons */
+  button {
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px 0;
+    padding: 10px 20px;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
+  /* Définir des styles pour les tableaux */
+  table {
+    border-collapse: collapse;
+    margin: 20px 0;
+    table-layout: fixed;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  math {
+    font-size: 2em;
+  }
+  
+  
+  /* Styles pour le pied de page */
+  .footer-nav {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .footer-nav ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .footer-nav li:last-child {
+    margin-right: 0;
+  }
+
+  h1 {
+    margin-top: 80px; /* 80px correspond à la hauteur de la barre de navigation */
+    margin-left: 10px;
+  }
+
+  p, h2, math, button{
+    margin-left: 10px;
+  }
+
+  h1,h2,h3{
+    text-align: center;
+  }
+
+
+  section {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+  }
+  
+  section h2 {
+    font-size: 24px;
+    margin-top: 0;
+  }
+  
+  section p {
+    font-size: 18px;
+    line-height: 1.5;
+
+  }
+  
+  section ul.formule {
+    margin: 20px 0;
+    padding: 0 0 0 40px;
+  }
+  
+  section ul.formule li {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  /* Crée un style pour les formules mathématiques de la section */
+  section .math {
+    display: block;
+    align-content: center;
+    justify-content: center;
+    max-width: 100%;
+    font-size: 1em;
+    text-align: center;
+    border: solid 10px darkcyan;
+  }
+
+  .cacher-contenu *:not(h1):not(h2) {
+    display: none;
+  }
+
+  .cacher:hover {
+    cursor: pointer;
+
+  }
+
+  .menu-lateral {
+    position: fixed;
+    top: 100px;
+    right: -160px;
+    width: 150px;
+    background-color: #f8f8f8;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    transition: right 0.3s ease-in-out;
+  }
+  
+  .menu-lateral-ouvert {
+    right: 0;
+  }
+  
+  .menu-lateral ul {
+    margin: 0;
+    list-style: none;
+    text-align: center;
+  }
+  
+  .menu-lateral li {
+    padding: 10px 0;
+  }
+  
+  .menu-lateral li a {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .menu-lateral li a:hover {
+    color: #666;
+  }
+  
+  #menu-toggle {
+    position: fixed;
+    top: 30px;
+    right: 10px;
+    font-size: 20px;
+    padding: 5px;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+  }
+  
+  .contenu-page {
+    margin-left: 200px;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+  }
+  
+  .contenu-page-decale {
+    margin-left: 0;
+  }
+
+embed, pre{
+  margin-left: 25%;
+}
+
+
+form, #resultat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+/* Ajouter une bordure autour du formulaire */
+form {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  margin-left: 35%;
+}
+
+label {
+  display: inline-block;
+  width: 150px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+input, select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  width: 100%;
+}
+
+select, input {
+  margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  background-color: blue;
+  color: white;
+  border: 0;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: darkblue;
+}
+
+#resultat {
+  font-size: 24px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#resultat li{
+  text-align: left;
+  list-style-type: none;
+}
+
+#game-board {
+  border-collapse: collapse;
+  margin: auto;
+  max-width: 500px; 
+}
+
+#game-board td {
+  border: 3px solid black;
+  width: 150px;
+  height: 150px;
+  font-size: 100px;
+  color: black;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #f8f8f8;
+}
+
+
+#game-board tr td{
+  background-color: lightblue;
+}
+
+#game-board tr td:hover {
+  background-color: gray;
+}
+
+#game-board td:active {
+  transform: scale(0.95);
+}
+
+#game-board td.x {
+  color: red;
+}
+
+#game-board td.o {
+  color: blue;
+}

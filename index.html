@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <style>
+  *{
+    text-align: center;
+  }
+  </style>
+  <head>
+    <title>Page d'accueil</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="theorie.html">Theorie</a></li>
+        <li><a href="informatique.html">Informatique</a></li>
+        <li><a href="module.html">Module</a></li>
+        <li><a href="ludique.html">Ludique</a></li>
+      </ul>
+    </nav>
+    <h1>Page d'accueil</h1>
+    <section>
+      <h2>Theorie</h2>
+      <p>Dans la page théorique nous retrouverons la présentation de la charge de trafic et de la formule d'Erlang B</p>
+    </section>
+    <section>
+      <h2>Informatique</h2>
+      <p>Dans la page informatique nous retrouverons le code python qui a été réalisé en R107 afin de développer une bataille navale et également le sujet de ce TP</p>
+    </section>
+    <section>
+      <h2>Module</h2>
+      <p>Dans la page module nous retrouverons le module R101 et l'explication de la convertion entre les différentes bases ainsi qu'un <bold>convertisseur</bold></p>
+    </section>
+    <section>
+      <h2>Ludique</h2>
+      <p>Dans la page ludique nous retrouverons un jeu du Morpion</p>
+    </section>
+
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="https://github.com/DreanoLucas">Github</a></li>
+        <li><a href="https://esplaboratory.gitlab.io/website/">Esplaboratory</a></li>
+        <li><a href="mailto:lucas.dreano@gmail.com">Mail</a></li>
+      </ul>
+    </nav>
+  </body>
+  <script>const boutonsMasquer = document.querySelectorAll('h2');
+
+    for (let bouton of boutonsMasquer) {
+          const section = bouton.parentNode;
+          const elementsToHide = section.children;
+        
+          bouton.addEventListener('click', () => {
+            section.classList.toggle('cacher-contenu');
+            for (let element of elementsToHide) {
+              if (element.tagName !== 'H1' && element.tagName !== 'H2') {
+                element.classList.toggle('cacher-contenu');
+              }
+            }
+          });
+        }</script>
+</html>

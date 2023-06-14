@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page d'accueil</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="theorie.html">Theorie</a></li>
+        <li><a href="informatique.html">Informatique</a></li>
+        <li><a href="module.html">Module</a></li>
+        <li><a href="ludique.html">Ludique</a></li>
+      </ul>
+    </nav>
+    <h1>Module R101</h1>
+    <section>
+        <h2 id="10n">Conversion de base 10 vers une base N</h2>
+        <p>Pour convertir un nombre de base 10 en une base N quelconque, il faut suivre les étapes suivantes :</p>
+        <ol>
+          <li>Diviser le nombre par la base N.</li>
+          <li>Prendre le reste de la division et l'écrire à droite du quotient précédent.</li>
+          <li>Recommencer les étapes 1 et 2 avec le quotient de la division précédente jusqu'à ce que le quotient soit égal à zéro.</li>
+          <li>Le nombre converti est égal aux restes écrits de droite à gauche.</li>
+        </ol>
+        
+        <p>Voici un exemple de conversion de base 10 en base 2 :</p>
+        <p>Conversion de 13<sub>10</sub> en base 2 :</p>
+        
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <msub><mi>13</mi><mn>10</mn></msub>
+          <mo>=</mo>
+          <mrow>
+            <mn>1</mn>
+            <mo>.</mo>
+            <mn>1</mn>
+            <mo>.</mo>
+            <mn>0</mn>
+            <mo>.</mo>
+            <mn>1</mn>
+          </mrow>
+          <sub>2</sub>
+        </math>
+        
+        <p>Le nombre 13<sub>10</sub> est donc équivalent à 1 1 0 1<sub>2</sub>.</p>
+    </section>
+    <section>
+        <h2 id="n10">Conversion de base N vers base 10</h2>
+        <p>Pour convertir un nombre de base N en base 10, il faut utiliser la formule suivante :</p>
+    
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <msub>
+        <mi>a</mi>
+        <mn>N</mn>
+      </msub>
+      <mo>×</mo>
+      <msup>
+        <mn>N</mn>
+        <mrow>
+          <mi>n</mi>
+          <mo>-</mo>
+          <mn>1</mn>
+        </mrow>
+      </msup>
+      <mo>+</mo>
+      <msub>
+        <mi>a</mi>
+        <mn>N</mn>
+        <mi>n</mi>
+      </msub>
+    </math>
+    
+        <p>où :</p>
+        <ul>
+          <li>a<sub>N</sub> est le chiffre de poids N-1 dans le nombre N-a<sub>N-1</sub>a<sub>N-2</sub>...a<sub>0</sub></li>
+          <li>N est la base initiale du nombre</li>
+          <li>n est le nombre de chiffres dans le nombre</li>
+          <li>a<sub>N</sub>a<sub>N-1</sub>...a<sub>0</sub> est le nombre dans la base N</li>
+        </ul>
+        
+        <p>Voici un exemple de conversion de base 5 en base 10 :</p>
+        <p>Conversion de 432<sub>5</sub> en base 10 :</p>
+        
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <msub><mi>4</mi><mn>5</mn></msub>
+          <mo>×</mo>
+          <msup><mn>5</mn><mn>2</mn></msup>
+          <mo>+</mo>
+          <msub><mi>3</mi><mn>5</mn></msub>
+          <mo>×</mo>
+          <msup><mn>5</mn><mn>1</mn></msup>
+          <mo>+</mo>
+          <msub><mi>2</mi><mn>5</mn></msub>
+          <mo>×</mo>
+          <msup><mn>5</mn><mn>0</mn></msup>
+        </math>
+        
+        <p>Le nombre 432<sub>5</sub> est donc équivalent à 117<sub>10</sub>.</p>
+    </section>
+    <section>
+        <h2 id="216">Conversion de base 2 vers une base 16</h2>
+        <p>Pour convertir un nombre de base 2 en base 16, il faut d'abord diviser le nombre en groupes de 4 chiffres binaires, en partant de la droite. Ensuite, chaque groupe de 4 chiffres est converti en un seul chiffre hexadécimal en utilisant la table de correspondance suivante :</p>
+        <table>
+          <tr><th>Bits binaires</th><th>Chiffre hexadécimal</th></tr>
+          <tr><td>0000</td><td>0</td></tr>
+          <tr><td>0001</td><td>1</td></tr>
+          <tr><td>0010</td><td>2</td></tr>
+          <tr><td>0011</td><td>3</td></tr>
+          <tr><td>0100</td><td>4</td></tr>
+          <tr><td>0101</td><td>5</td></tr>
+          <tr><td>0110</td><td>6</td></tr>
+          <tr><td>0111</td><td>7</td></tr>
+          <tr><td>1000</td><td>8</td></tr>
+          <tr><td>1001</td><td>9</td></tr>
+          <tr><td>1010</td><td>A</td></tr>
+          <tr><td>1011</td><td>B</td></tr>
+          <tr><td>1100</td><td>C</td></tr>
+          <tr><td>1101</td><td>D</td></tr>
+          <tr><td>1110</td><td>E</td></tr>
+          <tr><td>1111</td><td>F</td></tr>
+        </table>
+        
+        <p>Voici un exemple de conversion de base 2 en base 16 :</p>
+        <p>Conversion de 101011101010<sub>2</sub> en base 16 :</p>
+        
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <mn>1010</mn>
+          <mo>.</mo>
+          <mn>E</mn>
+          <msub><mi>A</mi><mn>16</mn></msub>
+        </math>
+        
+        <p>Le nombre 101011101010<sub>2</sub> est donc équivalent à AEA<sub>16</sub>.</p>
+    
+    </section>
+    <section>
+    <h2 id="convertisseur">Convertisseur dans les différentes bases</h2>
+    <form>
+        <label for="base-depart">Base de départ :</label>
+        <select id="base-depart">
+              <option value="2">Binaire</option>
+              <option value="8">Octal</option>
+              <option value="10" selected>Decimale</option>
+              <option value="16">Hexadecimale</option>
+        </select>
+        <label for="base-arrivee">Base d'arrivée :</label>
+        <select id="base-arrivee">
+              <option value="2" selected>Binaire</option>
+              <option value="8">Octal</option>
+              <option value="10">Decimale</option>
+              <option value="16">Hexadecimale</option>
+        </select>
+        <br>
+        <label for="valeur">Valeur :</label>
+        <input type="text" id="valeur" placeholder="Entrez une valeur">
+        <br>
+        <input type="submit" value="Convertir">
+    </form>
+    <div id="resultat"></div>
+    </section>
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="https://github.com/DreanoLucas">Github</a></li>
+        <li><a href="https://esplaboratory.gitlab.io/website/">Esplaboratory</a></li>
+        <li><a href="mailto:lucas.dreano@gmail.com">Mail</a></li>
+      </ul>
+    </nav>
+    <nav class="menu-lateral">
+        <ul>
+          <li><a href="#10n">Base 10 vers base N</a></li>
+          <li><a href="#n10">Base N vers base 10</a></li>
+          <li><a href="#216">Base 2 vers base 16</a></li>
+          <li><a href="#convertisseur">Convertisseur</a></li>
+        </ul>
+    </nav>
+    <button id="menu-toggle">&#9776;</button>
+  </body>
+  <script src="js/module.js"></script>
+</html>

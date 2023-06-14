@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Theorie d'Erlang B</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+  <body>
+    <nav class="top-nav">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="theorie.html">Theorie</a></li>
+          <li><a href="informatique.html">Informatique</a></li>
+          <li><a href="module.html">Module</a></li>
+          <li><a href="ludique.html">Ludique</a></li>
+        </ul>
+      </nav>
+    <h1>Theorie d'Erlang B</h1>
+    <section>
+        <h2 id="charge">Charge de trafic</h2>
+            <p>On considère un temps T : pour un circuit (une ligne), la
+                charge moyenne de trafic est le temps pendant lequel
+                ce circuit est utilisé divisé par T. C’est donc le taux
+                d’utilisation d’un circuit. <br>
+                -L’intensité de trafic, notée A dans les documents de l’IUT,
+                s’exprime en Erlangs <br>
+                -Pour 1 circuit, elle est forcément inférieure ou égale à 1; pour N
+                circuits, elle est inférieure ou égale à N <br>
+        
+                - Généralement on utilise T = une journée, ou T = une
+                heure. <br> Exemple : <br>
+                On veut calculer la charge de trafic sur une ligne de 10 à
+                11h. Ont lieu pendant cette durée :
+                <ul>
+                    <li>1 appel de 10h03 à 10h06</li>
+                    <li>1 appel de 10h18 à 10h24</li>
+                    <li>1 appel de 10h42 à 10h44</li>
+                    <li>1 appel de 10h53 à 10h56</li>
+                </ul>
+            </p>
+        <math>
+                <mrow>
+                  <mi>A</mi>
+                  <mo>=</mo>
+                  <mfrac>
+                    <mrow>
+                      <mn>3</mn>
+                      <mo>+</mo>
+                      <mn>6</mn>
+                      <mo>+</mo>
+                      <mn>2</mn>
+                      <mo>+</mo>
+                      <mn>3</mn>
+                    </mrow>
+                    <mn>60</mn>
+                  </mfrac>
+                  <mo>=</mo>
+                  <mn>0.233E</mn>
+                </mrow>
+            </math>
+            <p> - Si tous les appels se font à des moments différents, ça
+peut fonctionner avec une seule ligne externe… Et elle ne
+sera occupée que 50% du temps. <br>
+- En pratique, il est impossible d’éviter que certains de ces 5
+postes ne cherchent à appeler en même temps ! <br>
+Il y aura des blocages ou erreurs. <br>
+- Le taux d’erreur est le nombre d’erreurs divisé par le
+nombre d’appels <br> (ex : taux d’erreur de 1% : 1 appel sur 100
+ne peut aboutir).
+        </p>
+    </section>
+    <section> 
+        <h2 id="erlang-b">Formule d'Erlang B</h2>
+        <p>La formule d'Erlang B est une formule mathématique utilisée pour déterminer le taux de blocage d'un système de file d'attente. 
+            Elle est utilisée dans les domaines de l'ingénierie des systèmes, des télécommunications, 
+            de la gestion de production et d'autres domaines où la file d'attente peut se produire. 
+
+            La formule est utilisée pour déterminer le pourcentage de demandes de service qui 
+            sont bloquées en raison de l'indisponibilité de ressources de service. Elle prend en 
+            compte le nombre de serveurs disponibles et le nombre de demandes de service entrantes
+             pour déterminer la probabilité de blocage de chaque demande.
+            <ul class="formule">
+                <li>B est le taux de blocage</li>
+                <li>C est le nombre de serveurs</li>
+                <li>r est le nombre de demandes de service entrantes</li>
+                <li>Σ^n_i=0(C^n_i / n!) est la somme de C^n_i / n! pour n allant de 0 à r.</li>
+            </ul></p>
+        <section class="math">
+            <math>
+            <mfrac>
+                <msup>
+                <mi>C</mi>
+                <mi>r</mi>
+                </msup>
+                <mrow>
+                <mrow>
+                    <mn>r</mn>
+                    <mo>!</mo>
+                </mrow>
+                <munderover>
+                    <mo>&#x2211;</mo>
+                    <mrow>
+                    <mi>n</mi>
+                    <mo>=</mo>
+                    <mn>0</mn>
+                    </mrow>
+                    <mi>r</mi>
+                </munderover>
+                <mfrac>
+                    <msup>
+                    <mi>C</mi>
+                    <mi>n</mi>
+                    </msup>
+                    <mfenced>
+                    <mi>n</mi>
+                    <mo>!</mo>
+                    </mfenced>
+                </mfrac>
+                </mrow>
+            </mfrac>
+            </math>
+        </section>
+    </section>
+    <button id="table">Afficher/Masquer la table d'Erlang B</button>
+    <table style="display: none">
+        <thead>
+          <tr>
+            <th>m \ r</th>
+            <th>0.1</th>
+            <th>0.2</th>
+            <th>0.3</th>
+            <th>0.4</th>
+            <th>0.5</th>
+            <th>0.6</th>
+            <th>0.7</th>
+            <th>0.8</th>
+            <th>0.9</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>0.091</td>
+            <td>0.169</td>
+            <td>0.249</td>
+            <td>0.33</td>
+            <td>0.412</td>
+            <td>0.494</td>
+            <td>0.576</td>
+            <td>0.658</td>
+            <td>0.74</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>0.01</td>
+            <td>0.028</td>
+            <td>0.054</td>
+            <td>0.087</td>
+            <td>0.126</td>
+            <td>0.17</td>
+            <td>0.217</td>
+            <td>0.267</td>
+            <td>0.319</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>0.001</td>
+            <td>0.003</td>
+            <td>0.007</td>
+            <td>0.014</td>
+            <td>0.025</td>
+            <td>0.04</td>
+            <td>0.058</td>
+            <td>0.079</td>
+            <td>0.103</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>0.0001</td>
+            <td>0.0003</td>
+            <td>0.001</td>
+            <td>0.003</td>
+            <td>0.006</td>
+            <td>0.01</td>
+            <td>0.015</td>
+            <td>0.022</td>
+            <td>0.03</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>0.00001</td>
+            <td>0.00005</td>
+            <td>0.0002</td>
+            <td>0.0006</td>
+            <td>0.0014</td>
+            <td>0.0026</td>
+            <td>0.0045</td>
+            <td>0.0073</td>
+            <td>0.0112</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>0.000001</td>
+            <td>0.000005</td>
+            <td>0.00002</td>
+            <td>0.00006</td>
+            <td>0.00014</td>
+            <td>0.00028</td>
+            <td>0.0005</td>
+            <td>0.0009</td>
+            <td>0.0015</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>0.0000001</td>
+            <td>0.000001</td>
+            <td>0.000005</td>
+            <td>0.00002</td>
+            <td>0.00005</td>
+            <td>0.00011</td>
+            <td>0.0002</td>
+            <td>0.0004</td>
+            <td>0.0007</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>0.00000001</td>
+            <td>0.0000001</td>
+            <td>0.0000005</td>
+            <td>0.000002</td>
+            <td>0.000005</td>
+            <td>0.00001</td>
+            <td>0.00002</td>
+            <td>0.00003</td>
+            <td>0.00004</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>0.000000001</td>
+            <td>0.00000001</td>
+            <td>0.00000004</td>
+            <td>0.00000017</td>
+            <td>0.0000005</td>
+            <td>0.0000012</td>
+            <td>0.0000027</td>
+            <td>0.0000058</td>
+            <td>0.0000118</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>0.0000000001</td>
+            <td>0.000000001</td>
+            <td>0.000000004</td>
+            <td>0.000000018</td>
+            <td>0.000000052</td>
+            <td>0.00000013</td>
+            <td>0.0000003</td>
+            <td>0.0000006</td>
+            <td>0.0000013</td>
+          </tr>
+        </tbody>
+    </table>
+    <nav class="footer-nav">
+        <ul>
+          <li><a href="https://github.com/DreanoLucas">Github</a></li>
+          <li><a href="https://esplaboratory.gitlab.io/website/">Esplaboratory</a></li>
+          <li><a href="mailto:lucas.dreano@gmail.com">Mail</a></li>
+        </ul>
+      </nav>
+      <nav class="menu-lateral">
+        <ul>
+          <li><a href="#charge">Charge du trafic</a></li>
+          <li><a href="#erlang-b">Erlang-b</a></li>
+        </ul>
+      </nav>
+      <button id="menu-toggle">&#9776;</button>
+  </body>
+  <script src="js/theorie.js"></script>
+</html>
